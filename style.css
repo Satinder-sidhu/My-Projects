@@ -8,6 +8,11 @@ body {
     color: hsl(230, 17%, 14%);
 }
 
+body.dark {
+    background-color: black;
+    color:  hsl(0, 0%, 100%);
+}
+
 .dashboard {
     max-width: 1000px;
     margin: auto;
@@ -15,6 +20,16 @@ body {
     position: relative;
     margin-top: 100px;
     z-index: 1;
+}
+
+.dashboard.dark {   
+    background-color: hsl(230, 17%, 14%);
+    color:  hsl(0, 0%, 100%);
+   
+}
+
+.dashboard.dark > .mainheader > .title > h5, .switch > label {
+    color: hsl(228, 34%, 66%);
 }
 
 header {
@@ -44,6 +59,12 @@ header label {
     font-weight: 700;
 }
 
+
+header.dark {
+    background-color: hsl(232, 19%, 15%);
+}
+
+
 .mainheader {
     display: flex;
     align-items: center;
@@ -67,12 +88,20 @@ header label {
     border-radius: 6px;
 }
 
+.card.dark {
+    background-color: hsl(228, 28%, 20%);
+}
+
 .card .data > p {
     font-size: 14px;
     color: hsl(228, 12%, 44%);
     margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.card.dark .data > p {
+    color: hsl(228, 34%, 66%);
 }
 
 .card > .data > h3 {
@@ -106,6 +135,11 @@ header label {
 .status.insta {
     background-color: #E1E3F0;
 }
+
+.status.insta.dark {
+    background-color: hsl(228, 28%, 20%);
+}
+
 .youtube {
     border-top: 4px solid hsl(348, 97%, 39%);
 }
@@ -127,10 +161,18 @@ header label {
     padding: 20px;
 }
 
+.status.dark {
+    background-color: hsl(228, 28%, 20%);
+}
+
 .status p {
     font-size: 14px;
     font-weight: 700;
     color: hsl(228, 12%, 44%);
+}
+
+.status.dark p {
+    color: hsl(228, 34%, 66%);
 }
 
 .status h3 {
