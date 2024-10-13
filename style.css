@@ -28,7 +28,7 @@ body.dark {
    
 }
 
-.dashboard.dark > .mainheader > .title > h5, .switch > label {
+.dashboard.dark  .mainheader  .title > h5, .switch > label {
     color: hsl(228, 34%, 66%);
 }
 
@@ -73,9 +73,12 @@ header.dark {
     width: 100%;
 }
 
+/* social media contains all cards */
 .socialmedia {
     display: flex;
     justify-content: space-between;
+    gap: 8px;
+    padding: 8px;
 }
 
 .card {
@@ -90,6 +93,10 @@ header.dark {
 
 .card.dark {
     background-color: hsl(228, 28%, 20%);
+}
+
+.card.dark .icon h6 {
+    color: hsl(228, 34%, 66%);
 }
 
 .card .data > p {
@@ -148,11 +155,13 @@ header.dark {
     color: hsl(228, 12%, 44%);
 }
 
+/* it contains all status cards */
 .overview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
-    gap: 10px;
+    padding: 8px;
+    gap: 8px;
 }
 
 .status {
@@ -208,4 +217,10 @@ header.dark {
 
 .down {
     color: #B05A65 ;
+}
+
+footer {
+    position: fixed;
+    right: 5px;
+    bottom: 5px;
 }
