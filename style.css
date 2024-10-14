@@ -15,10 +15,9 @@ body.dark {
 
 .dashboard {
     max-width: 1000px;
-    margin: auto;
+    margin: 100px auto 0 auto;
     background-color: hsl(0, 0%, 100%);
     position: relative;
-    margin-top: 100px;
     z-index: 1;
 }
 
@@ -28,8 +27,46 @@ body.dark {
    
 }
 
-.dashboard.dark  .mainheader  .title > h5, .switch > label {
+.dashboard.dark  .mainheader  .title > h5, .switch > p {
     color: hsl(228, 34%, 66%);
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    position: relative;
+    width: 45px;
+    height: 23px;
+    background-color:  hsl(230, 22%, 74%);
+    padding: 2px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+label.dark {
+    background-image: linear-gradient( 90deg, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+}
+
+.toggleIcon {
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+#mode {
+    position: absolute;
+    opacity: 0;  
+}
+
+#mode:checked + .toggleIcon{
+    transform: translateX(100%);
 }
 
 header {
@@ -79,13 +116,13 @@ header.dark {
     justify-content: space-between;
     gap: 8px;
     padding: 8px;
+    margin: 0% auto;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 240px;
     width: 100%;
     background-color: hsl(227, 47%, 96%);
     border-radius: 6px;
@@ -135,17 +172,17 @@ header.dark {
     border-top: 4px solid hsl(203, 89%, 53%);
 }
 
-.insta {
-    border-image: linear gradient(hsl(37, 97%, 70%) to hsl(329, 70%, 58%));
-    background-color: #E1E3F0;
-}
-.status.insta {
+.card:hover {
     background-color: #E1E3F0;
 }
 
-.status.insta.dark {
-    background-color: hsl(228, 28%, 20%);
+.card.dark:hover{
+    background-color: #333A54;
 }
+.status:hover {
+    background-color: #E1E3F0;
+}
+
 
 .youtube {
     border-top: 4px solid hsl(348, 97%, 39%);
@@ -172,6 +209,10 @@ header.dark {
 
 .status.dark {
     background-color: hsl(228, 28%, 20%);
+}
+
+.status.dark:hover{
+    background-color: #333A54;
 }
 
 .status p {
@@ -212,15 +253,54 @@ header.dark {
 }
 
 .up {
-    color: #4CA08E ;
+    color: hsl(163, 72%, 41%) ;
 }
 
 .down {
-    color: #B05A65 ;
+    color: hsl(356, 69%, 56%) ;
 }
 
 footer {
     position: fixed;
     right: 5px;
     bottom: 5px;
+}
+
+@media screen and (max-width: 760px) {
+    .dashboard{
+        margin-top: 0;
+        position: static;
+    }
+
+    header {
+        position: static;
+        padding-inline: 10px;
+    }
+    header h2{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    header h5, label {
+        font-weight: 500;
+    }
+    .socialmedia {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .card {
+        max-width: 520px;
+    }
+    .overview{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .status {
+        max-width: 520px;
+        width: 100%;
+    }
+
+    
 }

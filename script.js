@@ -3,12 +3,14 @@ const Dashboard = document.querySelector('.dashboard')
 const Cards = document.querySelectorAll('.card')
 const Status = document.querySelectorAll('.status')
 const Header = document.querySelector('header')
+const ToggleMode = document.querySelector('label')
 
 
 
 DarkMode.addEventListener('change', ()=>{
     if(DarkMode.checked){
         document.body.classList.add('dark')
+        ToggleMode.classList.add('dark')
         Dashboard.classList.add('dark')
         Header.classList.add('dark')
         Cards.forEach((card)=>{
@@ -21,6 +23,7 @@ DarkMode.addEventListener('change', ()=>{
     }
     else{
         document.body.classList.remove('dark')
+        ToggleMode.classList.remove('dark')
         Dashboard.classList.remove('dark')
         Header.classList.remove('dark')
         Cards.forEach((card)=>{
