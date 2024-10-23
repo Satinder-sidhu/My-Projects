@@ -266,6 +266,8 @@ footer {
     bottom: 5px;
 }
 
+/* ! Media queries */
+
 @media screen and (max-width: 760px) {
     .dashboard{
         margin-top: 0;
@@ -286,7 +288,7 @@ footer {
     .socialmedia {
         flex-direction: column;
         align-items: center;
-        margin: 0 auto;
+        margin: 0 24px;
     }
 
     .card {
@@ -296,6 +298,7 @@ footer {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-inline: 24px;
     }
     .status {
         max-width: 520px;
