@@ -1,34 +1,39 @@
 * {
     box-sizing: border-box;
 }
-
+:root {
+    --bg-color-primary:  hsl(0, 0%, 100%);
+    --bg-secondary: hsl(225, 100%, 98%);
+    --color-text: hsl(230, 17%, 14%);
+    --element-color: hsl(227, 47%, 96%);
+    --card-text: hsl(228, 12%, 44%);
+    --label-Gradient: hsl(230, 22%, 74%);
+    
+}
 body {
     margin: 0%;
     font-family: Inter;
-    color: hsl(230, 17%, 14%);
+    background-color: var(--bg-color-primary);
+    color: var(--color-text);
 }
 
 body.dark {
-    background-color: black;
-    color:  hsl(0, 0%, 100%);
+    --bg-color-primary: hsl(230, 17%, 14%);
+    --bg-secondary:  hsl(232, 19%, 15%);
+    --color-text:  hsl(0, 0%, 100%);
+    --element-color: hsl(228, 28%, 20%);
+    --card-text: hsl(228, 34%, 66%);
+    --label-Gradient: linear-gradient( 90deg, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
+     
 }
 
 .dashboard {
     max-width: 1000px;
     margin: 100px auto 0 auto;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--bg-secondary);
     position: relative;
     z-index: 1;
-}
-
-.dashboard.dark {   
-    background-color: hsl(230, 17%, 14%);
-    color:  hsl(0, 0%, 100%);
-   
-}
-
-.dashboard.dark  .mainheader  .title > h5, .switch > p {
-    color: hsl(228, 34%, 66%);
+    padding: 8px 24px;
 }
 
 .switch {
@@ -40,16 +45,14 @@ label {
     position: relative;
     width: 45px;
     height: 23px;
-    background-color:  hsl(230, 22%, 74%);
+    background-color: hsl(230, 22%, 74%);
+    background-image:  var(--label-Gradient);
     padding: 2px;
     border-radius: 25px;
     display: flex;
     align-items: center;
 }
 
-label.dark {
-    background-image: linear-gradient( 90deg, hsl(210, 78%, 56%) , hsl(146, 68%, 55%));
-}
 
 .toggleIcon {
     width: 18px;
@@ -73,7 +76,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: hsl(227, 47%, 96%);
+    background-color: var(--bg-secondary);
     position: absolute;
     left: -80px;
     right: -80px;
@@ -94,11 +97,6 @@ header h5 {
 header label {
     font-size: 12px;
     font-weight: 700;
-}
-
-
-header.dark {
-    background-color: hsl(232, 19%, 15%);
 }
 
 
@@ -124,28 +122,16 @@ header.dark {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: hsl(227, 47%, 96%);
+    background-color: var(--element-color);
     border-radius: 6px;
-}
-
-.card.dark {
-    background-color: hsl(228, 28%, 20%);
-}
-
-.card.dark .icon h6 {
-    color: hsl(228, 34%, 66%);
 }
 
 .card .data > p {
     font-size: 14px;
-    color: hsl(228, 12%, 44%);
+    color: var(--card-text);
     margin-top: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
-}
-
-.card.dark .data > p {
-    color: hsl(228, 34%, 66%);
 }
 
 .card > .data > h3 {
@@ -164,32 +150,49 @@ header.dark {
     height: 20px;
 }
 
-.fb {
+.card.fb {
     border-top: 4px solid hsl(208, 92%, 53%);
 }
 
-.tw {
+.card.tw {
     border-top: 4px solid hsl(203, 89%, 53%);
+}
+
+.card.youtube {
+    border-top: 4px solid hsl(348, 97%, 39%);
+}
+
+.card.insta{
+    position: relative;
+}
+
+.card.insta::before{
+    content: '';
+    background-image: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+   
 }
 
 .card:hover {
     background-color: #E1E3F0;
 }
 
-.card.dark:hover{
+body.dark .card:hover{
     background-color: #333A54;
 }
 .status:hover {
     background-color: #E1E3F0;
 }
-
-
-.youtube {
-    border-top: 4px solid hsl(348, 97%, 39%);
+body.dark .status:hover{
+    background-color: #333A54;
 }
 
 .todayStatus {
-    color: hsl(228, 12%, 44%);
+    color: var(--card-text);
 }
 
 /* it contains all status cards */
@@ -202,27 +205,17 @@ header.dark {
 }
 
 .status {
-    background-color: hsl(227, 47%, 96%);
+    background-color: var(--element-color);
     border-radius: 6px;
     padding: 20px;
 }
 
-.status.dark {
-    background-color: hsl(228, 28%, 20%);
-}
 
-.status.dark:hover{
-    background-color: #333A54;
-}
 
 .status p {
     font-size: 14px;
     font-weight: 700;
-    color: hsl(228, 12%, 44%);
-}
-
-.status.dark p {
-    color: hsl(228, 34%, 66%);
+    color: var(--card-text)
 }
 
 .status h3 {
@@ -268,7 +261,7 @@ footer {
 
 /* ! Media queries */
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 860px) {
     .dashboard{
         margin-top: 0;
         position: static;
@@ -280,7 +273,7 @@ footer {
     }
     header h2{
         font-size: 18px;
-        font-weight: 500;
+        font-weight: bolder;
     }
     header h5, label {
         font-weight: 500;
@@ -303,7 +296,19 @@ footer {
     .status {
         max-width: 520px;
         width: 100%;
-    }
+    }    
+}
 
+@media ( max-width:600px) {
+    .mainheader .title h2, h5 {
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .mainheader .switch p{
+        font-size: 13px;
+    }
+    .dashboard{
+        margin: 8px 16px;
+    }
     
 }

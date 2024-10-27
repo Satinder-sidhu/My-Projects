@@ -1,37 +1,21 @@
-const DarkMode = document.querySelector('#mode')
-const Dashboard = document.querySelector('.dashboard')
-const Cards = document.querySelectorAll('.card')
-const Status = document.querySelectorAll('.status')
-const Header = document.querySelector('header')
-const ToggleMode = document.querySelector('label')
+const DarkMode = document.querySelector("#mode");
+const ToggleMode = document.querySelector("label");
 
+// debugger;
 
+const IsDarkmode = JSON.parse(localStorage.getItem("changeTheme"));
 
-DarkMode.addEventListener('change', ()=>{
-    if(DarkMode.checked){
-        document.body.classList.add('dark')
-        ToggleMode.classList.add('dark')
-        Dashboard.classList.add('dark')
-        Header.classList.add('dark')
-        Cards.forEach((card)=>{
-            card.classList.add('dark')
-        })
-        Status.forEach((status)=>{
-            status.classList.add('dark')
-        })
-        
-    }
-    else{
-        document.body.classList.remove('dark')
-        ToggleMode.classList.remove('dark')
-        Dashboard.classList.remove('dark')
-        Header.classList.remove('dark')
-        Cards.forEach((card)=>{
-            card.classList.remove('dark')
-        })
-        Status.forEach((status)=>{
-            status.classList.remove('dark')
-        })
-        
-    }
-})
+if (IsDarkmode) {
+  DarkMode.checked = true;
+}
+
+ToggleMode.addEventListener("click", () => {
+  console.log(IsDarkmode);
+  if (DarkMode.checked) {
+    document.body.classList.add("dark");
+    localStorage.setItem("changeTheme", true);
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("changeTheme", false);
+  }
+});
