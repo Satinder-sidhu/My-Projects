@@ -7,9 +7,10 @@ const IsDarkmode = JSON.parse(localStorage.getItem("changeTheme"));
 
 if (IsDarkmode) {
   DarkMode.checked = true;
+  document.body.classList.add("dark");
 }
 
-ToggleMode.addEventListener("click", () => {
+DarkMode.addEventListener("click", () => {
   console.log(IsDarkmode);
   if (DarkMode.checked) {
     document.body.classList.add("dark");
